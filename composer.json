@@ -1,0 +1,35 @@
+{
+  "name": "student/tasks-for-today",
+  "description": "A CodeIgniter 4 task dashboard with authenticated CRUD and soft deletion",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "ext-intl": "*",
+    "ext-mbstring": "*",
+    "ext-mysqli": "*",
+    "codeigniter4/framework": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Config\\": "app/Config/"
+    },
+    "exclude-from-classmap": [
+      "**/Database/Migrations/**"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@php scripts/install-scaffold.php"
+    ],
+    "post-update-cmd": [
+      "@php scripts/install-scaffold.php"
+    ]
+  }
+}
